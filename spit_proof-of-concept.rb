@@ -26,7 +26,7 @@ class Email
     @address = address
   end
   def self.generate
-    new 'email@example.com'
+    new "email#{rand}@example.com"
   end
 end
 
@@ -54,7 +54,7 @@ class Binding
   end
 end
 
-class BadIdea
+class Spit
   @what = Email.injectable
   def self.run
     logger = Logger.injectable
@@ -64,4 +64,4 @@ class BadIdea
   end
 end
 
-BadIdea.run
+Spit.run
